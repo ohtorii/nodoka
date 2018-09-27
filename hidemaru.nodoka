@@ -1,0 +1,105 @@
+############################################################################
+#	秀丸のダイアログ
+############################################################################
+window hidemaru_dialog /HIDEMARU\.EXE:Hidemaru32Class:#32770/ : Global
+key A-Down		= tab
+key A-Up		= S-tab
+
+############################################################################
+#	秀丸＆秀丸メール　共通設定
+############################################################################
+window hidemaru /HIDEMARU\.EXE/ : Global
+
+#タブ間の左右移動
+#key M1-F		= A-Right
+#key M1-S		= A-Left
+key A-Right 	= A-Right
+key A-Left 		= A-Left
+
+#分割ウインドウの上下移動
+#key M1-E		= A-Up
+#key M1-D		= A-Down
+
+key M1-Up 		= C-A-Num0
+key M1-Down 	= C-A-Num1
+key M1-A-Up		= C-A-Num9
+key M1-A-Down	= C-A-NumPlusSign	#Num+
+
+#タブの左右移動
+#key M1-W 		= C-A-Num3
+#key M1-A-Left 	= C-A-Num3
+#key M1-R 	= C-A-Num2
+#key M1-A-Right 	= C-A-Num2
+
+#key M1-Right	= C-A-Num4
+#key M1-Left		= C-A-Num5
+#key M1-PageUp 	= C-A-Num6
+#key M1-PageDown = C-A-Num7
+#key M1-Home 	= C-A-Num8
+key C-ScrollLock= A-F4
+#key M1-Esc 		= A-End
+#key M1-N		= NumAsterisk		#秀丸側で未使用？
+
+#key M1-C-Left	= C-A-_0
+#key M1-C-Right 	= C-A-_9
+
+#秀丸ウインドウ間の移動
+#key M1-_2		= C-A-Left
+#key M1-_4 		= C-A-Right
+
+#ウインドウ分割
+#key M1-_3		= A-PageDown
+#タブを閉じる
+#key M1-Q	= A-End
+
+#単語選択
+#key M1-M	= C-Up
+
+#key S-_2		= C-S-A-_2
+#key S-_7		= C-S-A-_7
+#key S-_8		= C-S-A-_8
+#key S-Comma		= C-S-A-Comma
+#key FullStop	= C-S-A-FullStop
+#key LeftSquareBracket = C-S-A-LeftSquareBracket
+key 半角/全角 = C-A-NumHyphenMinus
+
+############################################################################
+#秀丸メール（上記設定をコピペする、実行ファイルの正規表現を工夫すれば一つにまとめられるはず・・・）
+############################################################################
+window hidemaru_mail /turukame\.exe/ : Global
+key A-Right		= A-Right			#この行はコメントアウトする
+key A-Left		= A-Left				#
+key M1-Up 		= C-A-Num0
+key M1-Down 	= C-A-Num1
+key M1-A-Up		= C-A-Num9
+key M1-A-Down	= C-A-NumPlusSign	#Num+
+
+key M1-_3 	= C-A-Num3
+key M1-A-Left 	= C-A-Num3
+
+key M1-_4 	= C-A-Num2
+key M1-A-Right 	= C-A-Num2
+
+key M1-Right	= C-A-Num4
+key M1-Left		= C-A-Num5
+key M1-PageUp 	= C-A-Num6
+key M1-PageDown = C-A-Num7
+key M1-Home 	= C-A-Num8
+key C-ScrollLock= A-F4
+key M1-Esc 		= A-End
+key M1-N		= C-A-NumAsterisk
+#key C-S-Space 	= C-NumSolidus
+
+############################################################################
+#秀丸ファイラー
+############################################################################
+#window hidemaru_filer /HmFilerClassic\.exe/ : Global
+#key M1-E	= A-Up
+#key M1-D	= A-Down
+#key M1-Q	= A-End
+
+#タブ間の移動
+#key M1-W 		= C-A-S-W
+#key M1-A-Left 	= C-A-S-W
+#key M1-R 		= C-A-S-R
+#key M1-A-Right 	= C-A-S-R
