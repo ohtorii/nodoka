@@ -61,7 +61,7 @@ key C-ScrollLock= A-F4
 #key S-Comma		= C-S-A-Comma
 #key FullStop	= C-S-A-FullStop
 #key LeftSquareBracket = C-S-A-LeftSquareBracket
-key 半角/全角 = C-A-NumHyphenMinus
+#key 半角/全角 = C-A-NumHyphenMinus
 
 ############################################################################
 #秀丸メール（上記設定をコピペする、実行ファイルの正規表現を工夫すれば一つにまとめられるはず・・・）

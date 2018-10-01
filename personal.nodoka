@@ -58,6 +58,10 @@ def subst *英数 = *英数 # from http://d.hatena.ne.jp/kaosf/20101120
 mod control += 英数
 key *英数 = *LeftControl
 
+#半角/全角をWindowsキーに
+mod windows += 半角/全角
+key *半角/全角 = *LeftWindows
+
 #テキストエディタ向け
 mod mod1 = !!無変換
 
