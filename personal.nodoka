@@ -286,8 +286,8 @@ key M1-C-r						= C-y
 
 #search
 #カーソル位置の単語を検索（仮実装）
-key M1-S-Colon					= C-F
-key M1-Solidus					= C-F
+#key M1-S-Colon					= C-F
+#key M1-Solidus					= C-F
 
 
 key *S-*C-*A-M1-Space 			= *S-*C-*A-Enter		#無変換＋スペース	-> enter
