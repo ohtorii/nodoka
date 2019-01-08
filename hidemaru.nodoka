@@ -36,7 +36,7 @@ key M1-A-Down	= C-A-NumPlusSign	#Num+
 #key M1-PageUp 	= C-A-Num6
 #key M1-PageDown = C-A-Num7
 #key M1-Home 	= C-A-Num8
-key C-ScrollLock= A-F4
+#key C-ScrollLock= A-F4
 #key M1-Esc 		= A-End
 #key M1-N		= NumAsterisk		#èGä€ë§Ç≈ñ¢égópÅH
 
@@ -85,7 +85,7 @@ key M1-Left		= C-A-Num5
 key M1-PageUp 	= C-A-Num6
 key M1-PageDown = C-A-Num7
 key M1-Home 	= C-A-Num8
-key C-ScrollLock= A-F4
+#key C-ScrollLock= A-F4
 key M1-Esc 		= A-End
 key M1-N		= C-A-NumAsterisk
 #key C-S-Space 	= C-NumSolidus
