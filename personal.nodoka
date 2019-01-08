@@ -286,8 +286,8 @@ key M1-C-r						= C-y
 
 #search
 #カーソル位置の単語を検索（仮実装）
-key M1-S-Colon					= C-F
-key M1-Solidus					= C-F
+#key M1-S-Colon					= C-F
+#key M1-Solidus					= C-F
 
 
 key *S-*C-*A-M1-Space 			= *S-*C-*A-Enter		#無変換＋スペース	-> enter
@@ -368,7 +368,7 @@ key D-R-Pause		= &Ignore
 key C-Break 		= &WindowMinimize
 
 #閉じる(秀丸／コンソールは独自に上書きしている)
-key C-ScrollLock	= &WindowClose
+#key C-ScrollLock	= &WindowClose
 #key A-M1-Esc = &WindowClose
 
 #移動(通常ウインドウとMDI)
@@ -398,17 +398,17 @@ key M2-C-W		= &WindowResizeToPer(90,100)	&Sync &WindowMoveVisibly
 key M2-C-R		= &WindowResizeToPer(110,100)	&Sync &WindowMoveVisibly
 
 #画面の左と右側半分で最大化（トグル）
-Key PrintScreen 	= &Toggle(Lock0,off)
-Key L0-PrintScreen	= &WindowResizeMoveTo(960,1170,NW,0,24) &Toggle(Lock0,off)
-Key PrintScreen 	= &WindowResizeMoveTo(960,1170,NE,0,24) &Toggle(Lock0,on)
-key D-R-PrintScreen = &Ignore
+#Key PrintScreen 	= &Toggle(Lock0,off)
+#Key L0-PrintScreen	= &WindowResizeMoveTo(960,1170,NW,0,24) &Toggle(Lock0,off)
+#Key PrintScreen 	= &WindowResizeMoveTo(960,1170,NE,0,24) &Toggle(Lock0,on)
+#key D-R-PrintScreen = &Ignore
 
 #画面キャプチャ
-key A-PrintScreen	= PrintScreen
+#key A-PrintScreen	= PrintScreen
 
 #半透明（トグル）
-Key ScrollLock		= &WindowSetAlpha(25)
-key D-R-ScrollLock	= &Ignore
+#Key ScrollLock		= &WindowSetAlpha(25)
+#key D-R-ScrollLock	= &Ignore
 
 #タブコントロール
 #key A-Right = C-Tab
