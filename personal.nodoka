@@ -361,8 +361,8 @@ key S-_0						= S-ReverseSolidus		#S-0 				-> _
 #	ウインドウ
 ############################################################################
 #最大化トグル
-#key Pause			= &WindowMaximize
-#key D-R-Pause		= &Ignore
+key Pause			= &WindowMaximize
+key D-R-Pause		= &Ignore
 
 #最小化
 #key C-Break 		= &WindowMinimize
