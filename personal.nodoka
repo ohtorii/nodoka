@@ -50,8 +50,12 @@ keymap Global
 #mod mod0 = !!‰p”
 
 # LeftControl‚ğCapsLock‚É
-mod control -= LeftControl
-key *LeftControl = *‰p”
+#mod control -= LeftControl
+#key *LeftControl = *‰p”
+
+# LeftControl‚ğWindowsƒL[‚É
+mod windows += !LeftControl
+key *LeftControl = *LeftWindows
 
 
 # CapsLock‚ğControl‚É
@@ -61,14 +65,13 @@ key *‰p” = *LeftControl
 
 
 #”¼Šp/‘SŠp‚ğApplicationsƒL[‚É
-mod windows += ”¼Šp/‘SŠp
 key *”¼Šp/‘SŠp = *Applications
 
 #ƒeƒLƒXƒgƒGƒfƒBƒ^Œü‚¯
-mod mod1 = !!–³•ÏŠ·
+#mod mod1 = !!–³•ÏŠ·
 
 #ƒEƒCƒ“ƒhƒE‘€ìŒn
-mod mod2 = !!•ÏŠ·
+#mod mod2 = !!•ÏŠ·
 
 #mod control 		+= convert			#•ÏŠ·         -> ctrl
 #key *S-hiragana 	= *S-Enter			#‚Ğ‚ç‚ª‚È     -> enter
