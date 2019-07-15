@@ -50,17 +50,19 @@ keymap Global
 #mod mod0 = !!英数
 
 # LeftControlをCapsLockに
-# mod control -= LeftControl
-# key *LeftControl = *英数
+mod control -= LeftControl
+key *LeftControl = *英数
+
 
 # CapsLockをControlに
 def subst *英数 = *英数 # from http://d.hatena.ne.jp/kaosf/20101120
 mod control += 英数
 key *英数 = *LeftControl
 
-#半角/全角をWindowsキーに
+
+#半角/全角をApplicationsキーに
 mod windows += 半角/全角
-key *半角/全角 = *LeftWindows
+key *半角/全角 = *Applications
 
 #テキストエディタ向け
 mod mod1 = !!無変換
@@ -78,9 +80,9 @@ mod control 		+= hiragana
 #key *convert	= *RCtrl
 
 #Space and Shift スペースのリピート無し版 Spaceキーだけ押すとスペースだが、他のキーと組み合わせるとシフト代わりになる。
-mod shift += !!Space
-key R-*Space = &Ignore
-key C-S-Space 	= A-C-NumSolidus
+#mod shift += !!Space
+#key R-*Space = &Ignore
+#key C-S-Space 	= A-C-NumSolidus
 
 #Space and Shift スペースのリピート有り版 Spaceキーだけ押すとスペースだが、他のキーと同時に押すとシフト代わりになる。
 #mod shift += !!!Space
@@ -111,6 +113,7 @@ key C-S-Space 	= A-C-NumSolidus
 #	秀丸＆秀丸メール
 ############################################################################
 include "hidemaru.nodoka"
+#include "vim.nodoka"
 
 
 ############################################################################
@@ -290,7 +293,7 @@ key M1-C-r						= C-y
 #key M1-Solidus					= C-F
 
 
-key *S-*C-*A-M1-Space 			= *S-*C-*A-Enter		#無変換＋スペース	-> enter
+#key *S-*C-*A-M1-Space 			= *S-*C-*A-Enter		#無変換＋スペース	-> enter
 #key *S-*C-*A-M1-convert			= *S-*C-*A-backspace	#無変換＋変換		-> bs
 #key *S-*C-*A-M1-hiragana		= *S-*C-*A-delete		#無変換＋ひらがな	-> delete
 key S-_0						= S-ReverseSolidus		#S-0 				-> _
