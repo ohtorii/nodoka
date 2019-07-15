@@ -1,0 +1,177 @@
+### vim mode
+
+#キーボードの種類毎にカスタマイズが必要な設定
+#	$
+#	+
+
+## vim mode トグル
+key 英数 = &Toggle(Lock0)
+
+## keymaps
+# 一行ヤンク
+#keymap2 LineYankReady
+#key L0-*S-*C-*A-Y = Home S-End C-C Home
+
+# 一行デリート
+keymap2 KeyD
+key L0-D = Home S-End C-X	#(dd)行削除
+key L0-_0 = S-Home C-X		#(d0)カーソル位置から行頭まで削除
+#key d$		#カーソル位置から行末まで削除
+#key dgg		#カーソル位置から最初まで削除
+#key dG		#カーソル位置から最後まで削除
+
+# 一行カット
+#keymap2 LineCutReady
+#key L0-*S-*C-*A-C = Home S-End C-X
+
+# 頑張って一番上まで戻ろうとする
+#keymap2 GoTopReady
+#key L0-*S-*C-*A-G = C-PageUp
+
+# exモードセーブ
+#keymap2 ex_mode_save
+#key L0-*S-*C-*A-Enter = C-S
+#key L0-*S-*C-*A-SemiColon = C-S # Enter代替
+
+# exモード
+#keymap2 ex_mode
+#key L0-*S-*C-*A-W = &Prefix(ex_mode_save)
+
+keymap Global
+
+#---------------------------------------------------------------------------
+#	カーソル移動
+#---------------------------------------------------------------------------
+
+key L0-H 		=Left		#(h)
+key L0-J 		=Down		#(j)
+key L0-K 		=Up			#(k)
+key L0-L 		=Right		#(l)
+key L0-S-H		=PageUp		#(仮)(H)画面上の最上に移動
+key L0-S-L		=PageDown	#(仮)(L)画面上の最下に移動
+key L0-S-M		=&Undefined	#(仮)(M)画面上の真ん中に移動
+#n%	#n%の位置に移動
+
+key L0-W 			= C-Right		#(w)前方に単語１つ分移動する
+key L0-B 			= C-Left		#(b)後方に単語１つ分移動する
+key L0-S-W 			= C-Right	#(W)スペース区切りで前方に単語１つぶん移動する
+key L0-S-B 			= C-Left 	#(B)スペース区切りで後方に単語１つぶん移動する
+
+key L0-S-E			= C-Right	#(仮)(E)次の単語の末尾に移動 スペース区切り
+#key L0-gE						#(仮)(gE)前の単語の末尾に移動 スペース区切り
+key L0-CircumflexAccent=Home	#(仮)(^)空白でない行頭に移動
+
+key L0-_0 			= Home		#行頭に移動する
+key L0-S-_4 		= End		#($)行末に移動する
+
+key L0-HyphenMinus	=Up			#(仮)(-)上の行頭の非空白文字に移動
+key L0-S-Semicolon	=Down		#(仮)(+)下の行頭の非空白文字に移動
+
+
+#key L0-GM=			#(仮)行の中央に移動に移動
+#key L0-GG=			#(仮)一行目に移動
+#key L0-S-G=		#(仮)最後の行に移動
+
+#key L0-%=			#(仮)対応する括弧に移動
+
+#key L0-g-;=	#(仮)前回編集した場所に戻る
+#key L0-g-,=	#(仮)前回編集した場所に進む
+
+
+#---------------------------------------------------------------------------
+#	ページ移動
+#---------------------------------------------------------------------------
+#key L0-zz=			#(仮)ページを現在行が中央になるように移動
+#key L0-z.=	
+#key L0-z-Enter=		#(仮)ページを現在行が最上になるように移動
+#key L0-zt	
+#key L0-z-		#(仮)ページを現在行が最下になるように移動
+#key L0-zb		
+#key L0-C-f		#(仮)次のページ
+#key L0-C-b		#(仮)前のページ
+#key L0-C-d		#(仮)半ページ次
+#key L0-C-u		#(仮)半ページ前
+#key L0-C-e		#(仮)画面を一行下に移動
+#key L0-C-y		#(仮)画面を一行上に移動
+
+#---------------------------------------------------------------------------
+#	カット＆ヤンク＆ペースト
+#---------------------------------------------------------------------------
+key L0-D=&Prefix(KeyD)
+#key x,		#文字削除
+#key dl		
+#key X		#文字削除(カーソルの左)
+
+#単語削除
+#key dw db de da" di( ...
+#key dab daB dap
+
+#key :7,20d		#範囲削除(7行目から20行目まで削除)
+#key yl yy yw y$ y0 3yy :4,89y		#ヤンク(カットと同じ)
+#key p		#次に貼り付け
+#key P		#前に貼り付け
+#key gp		#次に貼り付けてカーソルを移動
+#key gP		#前に貼り付けてカーソルを移動
+#key ]p		#インデントを合わせて次に貼り付け
+#key [p		#インデントを合わせて前に貼り付け
+
+#-----------------------
+#key L0-*S-*C-*A-_1 = &Undefined
+#key L0-*S-*C-*A-_2 = &Undefined
+#key L0-*S-*C-*A-_3 = &Undefined
+#key L0-*C-*A-_4 = &Undefined
+#key L0-*S-*C-*A-_5 = &Undefined
+#key L0-*S-*C-*A-_6 = &Undefined
+#key L0-*S-*C-*A-_7 = &Undefined
+#key L0-*S-*C-*A-_8 = &Undefined
+#key L0-*S-*C-*A-_9 = &Undefined
+#key L0-*S-*C-*A-_0 = &Undefined
+#key L0-*S-*C-*A-Q = &Undefined
+#key L0-*S-*C-*A-E = &Undefined
+#key L0-*S-*A-R = Delete &Toggle(Lock0, off)
+#key L0-*S-C-*A-R = C-Y
+#key L0-*S-*C-*A-T = &Undefined
+#key L0-*S-*C-*A-Y = &Prefix(LineYankReady)
+#key L0-*S-*A-U = C-Z
+#key L0-*S-C-*A-U = PageUp
+#key L0-*C-*A-I = &Toggle(Lock0, off)
+#key L0-S-*C-*A-I = Home &Toggle(Lock0, off)
+#key L0-*C-*A-O = End Enter &Toggle(Lock0, off)
+#key L0-*S-*C-*A-P = C-V
+#key L0-*C-*A-A = → &Toggle(Lock0, off)
+#key L0-S-*C-*A-A = End &Toggle(Lock0, off)
+#key L0-*S-*C-*A-S = &Undefined
+#key L0-*S-*A-D = &Prefix(LineDeleteReady)
+#key L0-*S-C-*A-D = PageDown
+#key L0-*S-*A-F = &Undefined
+#key L0-*S-C-*A-F = PageDown
+#key L0-*C-*A-G = &Prefix(GoTopReady)
+#key L0-S-*C-*A-G = PageDown PageDown PageDown PageDown PageDown
+#key L0-S-*C-*A-J = End Delete
+#key L0-*S-*C-*A-Z = &Undefined
+#key L0-*S-*C-*A-X = Delete
+#key L0-*S-*C-*A-C = &Prefix(LineCutReady) &Toggle(Lock0, off)
+#key L0-*C-*A-V = &Toggle(Lock1, on)
+#key L0-S-*C-*A-V = Home S-End &Toggle(Lock1, on)
+#key L0-*S-C-*A-B = PageUp
+#key L0-*S-*C-*A-N = &Undefined
+#key L0-*S-*C-*A-M = &Undefined
+#
+#key L0-*S-*C-*A-Solidus = C-F &Toggle(Lock0, off)
+#key L0-*S-*C-*A-Colon = &Prefix(ex_mode)
+#key L0-*S-*C-*A-CircumflexAccent = Home
+#
+#key L0-*S-*C-*A-Esc = &Toggle(Lock0, off)
+#key L0-*S-*C-*A-英数 = &Toggle(Lock0, off) # Esc代替
+
+
+# viasual mode (Lock1 : on)
+#key L1-*S-*C-*A-H = S-←
+#key L1-*S-*C-*A-J = S-↓
+#key L1-*S-*C-*A-K = S-↑
+#key L1-*S-*C-*A-L = S-→
+#key L1-*S-*C-*A-D = C-X &Toggle(Lock1, off)
+#key L1-*S-*C-*A-Y = C-C → ←&Toggle(Lock1, off)
+#
+#key L1-*S-*C-*A-Esc = &Toggle(Lock1, off) → ←
+#key L1-*S-*C-*A-英数 = &Toggle(Lock1, off) → ← # Esc代替
