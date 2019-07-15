@@ -6,13 +6,15 @@ REM
 setlocal
 set NODOKA=C:\Program Files\nodoka
 
-call :proc personal.nodoka
-call :proc hidemaru.nodoka
+call :copy personal.nodoka
+call :copy hidemaru.nodoka
+call :copy vim.nodoka
 exit /b 0
 
 
-:proc
+:copy
 echo %1
-del /F "%NODOKA%\%1"
-mklink /H "%NODOKA%\%1" "%~dp0%1"
+copy /Y "%~dp0%1" "%NODOKA%"
+REM del /F "%NODOKA%\%1"
+REM mklink /H "%NODOKA%\%1" "%~dp0%1"
 exit /b 0
