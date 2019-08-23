@@ -54,8 +54,8 @@ keymap Global
 #key *LeftControl = *‰p”
 
 # LeftControl‚ğWindowsƒL[‚É
-mod windows += !LeftControl
-key *LeftControl = *LeftWindows
+#mod windows += !LeftControl
+#key *LeftControl = *LeftWindows
 
 
 # CapsLock‚ğControl‚É
