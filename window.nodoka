@@ -1,0 +1,64 @@
+############################################################################
+#	ウインドウ
+############################################################################
+#最大化トグル
+key Pause			= &WindowMaximize
+key D-R-Pause		= &Ignore
+
+#最小化
+#key C-Break 		= &WindowMinimize
+
+#閉じる(秀丸／コンソールは独自に上書きしている)
+#key C-ScrollLock	= &WindowClose
+#key A-M1-Esc = &WindowClose
+
+#移動(通常ウインドウとMDI)
+#key M2-E		= &WindowMove(0, -20,MDI)
+#key M2-D		= &WindowMove(0,  20,MDI)
+#key M2-S		= &WindowMove(-20,0 ,MDI)
+#key M2-F		= &WindowMove(20, 0 ,MDI)
+#key M2-F1		= &WindowMonitorTo(primary, 1, true, true)
+#key M2-F2		= &WindowMonitorTo(primary, 0, true, true)
+
+#移動(通常ウインドウ)
+#key M2-C-E		= &WindowMove(0  ,-20) &Sync &WindowMoveVisibly
+#key M2-C-D		= &WindowMove(0  ,20)  &Sync &WindowMoveVisibly
+#key M2-C-S		= &WindowMove(-20,0)   &Sync &WindowMoveVisibly
+#key M2-C-F		= &WindowMove(20 ,0)   &Sync &WindowMoveVisibly
+
+#サイズ(通常ウインドウとMDI)
+#key M2-T		= &WindowResizeToPer(100,90,MDI)	&Sync &WindowMoveVisibly(MDI)
+#key M2-G 		= &WindowResizeToPer(100,110,MDI)	&Sync &WindowMoveVisibly(MDI)
+#key M2-W		= &WindowResizeToPer(90,100,MDI)	&Sync &WindowMoveVisibly(MDI)
+#key M2-R		= &WindowResizeToPer(110,100,MDI)	&Sync &WindowMoveVisibly(MDI)
+
+#サイズ(通常ウインドウ)
+#key M2-C-T		= &WindowResizeToPer(100,90)	&Sync &WindowMoveVisibly
+#key M2-C-G 		= &WindowResizeToPer(100,110)	&Sync &WindowMoveVisibly
+#key M2-C-W		= &WindowResizeToPer(90,100)	&Sync &WindowMoveVisibly
+#key M2-C-R		= &WindowResizeToPer(110,100)	&Sync &WindowMoveVisibly
+
+#画面の左と右側半分で最大化（トグル）
+#Key PrintScreen 	= &Toggle(Lock0,off)
+#Key L0-PrintScreen	= &WindowResizeMoveTo(960,1170,NW,0,24) &Toggle(Lock0,off)
+#Key PrintScreen 	= &WindowResizeMoveTo(960,1170,NE,0,24) &Toggle(Lock0,on)
+#key D-R-PrintScreen = &Ignore
+
+#画面キャプチャ
+#key A-PrintScreen	= PrintScreen
+
+#半透明（トグル）
+#Key ScrollLock		= &WindowSetAlpha(25)
+#key D-R-ScrollLock	= &Ignore
+
+#タブコントロール
+#key A-Right = C-Tab
+#key A-Left	= C-S-Tab
+key A-Right = C-Tab
+key A-Left 	= C-S-Tab
+#key M2-_2 	= C-Tab
+#key M2-_1	= C-S-Tab
+
+#アプリ切り替え
+#key M2-C = A-S-Tab
+#key M2-V = A-Tab
