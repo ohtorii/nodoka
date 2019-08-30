@@ -25,8 +25,22 @@ endif
 # Global keymap 設定
 keymap Global
 
+#-----------------------------------------------------------------------
+#	複数キーボードの定義
+#-----------------------------------------------------------------------
+#Thispad keyboard
+def option UnitID = K1 0 0 0
+#Realforce USB keyboard
+#def option UnitID = K2 132190 1954 0
+#def option UnitID = K3 1304 1 0
+
+def option FakeUp = enable 20 00
 
 
+
+#key K1-A = &HelpMessage("nodoka", "K1です")
+#key K2-A = &HelpMessage("nodoka", "K2です")
+ 
 # シフト+F2: 日本語キーボード、英語キーボード 切り替えトグル
 #if ( USE109 )
 #  if ( USE104on109 )
@@ -66,26 +80,28 @@ key *英数 = *LeftControl
 
 #半角/全角をApplicationsキーに
 key *半角/全角 = *Applications
+def option UnitID = K1 0 0 0
 
-#テキストエディタ向け
-#mod mod1 = !!無変換
 
-#ウインドウ操作系
-#mod mod2 = !!変換
+#mod mod1 = !!Space
+mod mod1 = !!無変換
+#mod mod1 = !!変換
 
 #mod control 		+= convert			#変換         -> ctrl
 #key *S-hiragana 	= *S-Enter			#ひらがな     -> enter
 #key *S-M1-hiragana 	= *S-backspace		#M1+ひらがな  -> BS
 #key *S-A-hiragana 	= *S-delete			#Alt+ひらがな -> Delete
 
-mod control 		+= hiragana
+#mod control 		+= hiragana
 #key *hiragana = *RCtrl
 #key *convert	= *RCtrl
 
+#変換だけ押すと変換だが、ほかのキーと組み合わせるとコントロール代わりになる
+mod control += !!convert
+
 #Space and Shift スペースのリピート無し版 Spaceキーだけ押すとスペースだが、他のキーと組み合わせるとシフト代わりになる。
-#mod shift += !!Space
-#key R-*Space = &Ignore
-#key C-S-Space 	= A-C-NumSolidus
+mod shift += !!Space
+key R-*Space = &Ignore
 
 #Space and Shift スペースのリピート有り版 Spaceキーだけ押すとスペースだが、他のキーと同時に押すとシフト代わりになる。
 #mod shift += !!!Space
@@ -117,135 +133,7 @@ mod control 		+= hiragana
 ############################################################################
 include "hidemaru.nodoka"
 #include "vim.nodoka"
-
-
-############################################################################
-#	Firefox(秀丸のショートカットキーと合わせる)
-#C###########################################################################
-window firefox /firefox\.exe/ : Global
-
-key A-Up	= A-Left
-key A-Down	= A-Right
-
-#タブ間の左右移動
-#key M1-S	= C-S-Tab
-key A-Left	= C-S-Tab
-#key M1-F	= C-Tab
-key A-Right	= C-Tab
-
-#上下スクロール
-key M1-E	= Up
-key M1-D	= Down
-
-key M1-Q	= C-F4
-key A-End	= C-F4
-
-key C-N 	= C-T
-key F3		= C-F
-key F2		= S-F3
-key F1		= F3
-Key C-S-F1	= A-G
-
-#key M1-_3	= A-G &Sync Tab &Sync Tab &Sync C-Left	&Sync Tab
-key M1-A-Left = A-G &Sync Tab &Sync Tab &Sync C-Left	&Sync Tab
-
-#key M1-_4	= A-G &Sync Tab &Sync Tab &Sync C-Right &Sync Tab
-key M1-A-Right = A-G &Sync Tab &Sync Tab &Sync C-Right &Sync Tab
-
-
-############################################################################C
-#	エクセル
-############################################################################
-#window excel /EXCEL\.EXE/ : Global
-#key M1-_2 	= C-PageDown
-#key M1-_1	= C-PageUp
-
-
-############################################################################
-#	エクスプローラ
-############################################################################
-window explore /iexplore\.exe|Explorer\.exe/ : Global
-#フォルダ表示のトグル
-key C-F1	= A-V E O
-
-#表示(詳細)
-key F12		= A-V D Enter
-
-#表示(一覧)
-key C-F12	= A-V R Enter
-
-
-############################################################################
-#	NVIDIA FX Composer
-############################################################################
-#window FXComposer /fxcomposer2\.exe/ : Global
-#key F7 = C-F7
-
-
-############################################################################
-#WinMerge
-############################################################################
-window WinMerge /WinMergeU\.exe:WinMergeWindowClassW:MDIClient/ : Global
-key A-End = C-F4
-#差分への移動
-key C-PageDown 	= A-Down
-key C-PageUp 	= A-Up
-
-
-############################################################################
-#VisualStudio
-############################################################################
-window VisualStudio /devenv\.exe/ : Global
-#key M1-Esc = A-F C
-key A-END = A-F C
-
-############################################################################
-#TortoiseMerge
-############################################################################
-window TortoiseMerge /TortoiseMerge\.exe/ : Global
-key C-PageDown 	= C-Down
-key C-PageUp 	= C-Up
-
-############################################################################
-#	コンソール
-############################################################################
-keyseq $WM_VSCROLL/SB_PAGEUP		= &PostMessage(ToItself, 277, 2, 0)
-keyseq $WM_VSCROLL/SB_PAGEDOWN		= &PostMessage(ToItself, 277, 3, 0)
-keyseq $ConsoleWindowClass/copy		= &PostMessage(ToItself, 274, 65520, 0)
-keyseq $ConsoleWindowClass/paste	= &PostMessage(ToItself, 274, 65521, 0)
-keyseq $ConsoleWindowClass/region	= &PostMessage(ToItself, 274, 65522, 0)
-keyseq $ConsoleWindowClass/scroll	= &PostMessage(ToItself, 274, 65523, 0)
-keyseq $ConsoleWindowClass/search	= &PostMessage(ToItself, 274, 65524, 0)
-keyseq $ConsoleWindowClass/select-all	= &PostMessage(ToItself, 274, 65525, 0)
-
-window  ConsoleWindowClass /^ConsoleWindowClass$/ : Global
-key A-F4 C-ScrollLock   = A-Space C		# ウィンドウを閉じる
-key PageUp		= $WM_VSCROLL/SB_PAGEUP
-key PageDown	= $WM_VSCROLL/SB_PAGEDOWN
-key C-A			= $ConsoleWindowClass/select-all
-#key C-Insert	= $ConsoleWindowClass/copy
-#key C-C			= $ConsoleWindowClass/copy
-key S-Insert	= $ConsoleWindowClass/paste
-key C-V			= $ConsoleWindowClass/paste
-key C-F			= $ConsoleWindowClass/search
-key F3			= $ConsoleWindowClass/search
-
-############################################################################
-#Google Chrome
-############################################################################
-window chrome /chrome\.exe:/ : Global
-key M1-Q	= C-F4
-key A-End	= C-F4
-key F3		= C-F
-key F2		= S-F3
-key F1		= F3
-
-#タブ間の左右移動
-#key M1-S	= C-S-Tab
-#key M1-F	= C-Tab
-#上下スクロール
-key M1-E	= Up
-key M1-D	= Down
+#include "apps.nodoka"
 
 keymap Global
 ############################################################################
@@ -254,176 +142,49 @@ keymap Global
 #メニューキー
 key C-半角/全角 = Applications
 
-key M1-S	= C-S-Tab
-key M1-F	= C-Tab
+#include "vim_like.nodoka"
+#include "mouse.nodoka"
+#include "window.nodoka"
 
-#-------------------------------
-#VIM ライクな移動
-#-------------------------------
 #移動
-key *S-*C-*A-M1-H 				= *S-*C-*A-Left
-key *S-*C-*A-M1-J 				= *S-*C-*A-Down
-key *S-*C-*A-M1-K 				= *S-*C-*A-Up
+key *S-*C-*A-M1-J 				= *S-*C-*A-Left
+key *S-*C-*A-M1-K 				= *S-*C-*A-Down
+key *S-*C-*A-M1-I 				= *S-*C-*A-Up
 key *S-*C-*A-M1-L 				= *S-*C-*A-Right
-key *S-*C-*A-M1-CircumflexAccent= *S-*C-*A-Home
-key *S-*C-*A-M1-_4 				= *S-*C-*A-End
 
-#高度な移動
-key M1-C-f	= PageDown
-key M1-C-b	= PageUp
-key M1-C-u	= Up Up Up Up Up Up Up Up
-key M1-C-d	= Down Down Down Down Down Down Down Down
-key M1-w	= C-Right
-key M1-b	= C-Left
+##移動＋選択
+key *S-*C-*A-M1-_8		 		= S-*C-*A-Up
+key *S-*C-*A-M1-Comma		 	= S-*C-*A-Down
+key *S-*C-*A-M1-M			 	= S-*C-*A-Left
+key *S-*C-*A-M1-FullStop	 	= S-*C-*A-Right
+#移動＋Ctrl＋選択
+key *S-*C-*A-M1-_7		 		= S-C-*A-Left
+key *S-*C-*A-M1-_9		 		= S-C-*A-Right
 
-#削除
-key M1-x						= Delete
-key M1-S-x						= backspace
+##移動+Ctrl
+key *S-*C-*A-M1-U 				= *S-C-*A-Left
+key *S-*C-*A-M1-O 				= *S-C-*A-Right
 
-
-#copy/past
-key M1-y 						= Home S-End C-C Home
-key M1-d						= Home S-End C-X
-key M1-p						= C-V
-
-#undo/redo
-key M1-u						= C-z
-key M1-C-r						= C-y
-
-#search
-#カーソル位置の単語を検索（仮実装）
-#key M1-S-Colon					= C-F
-#key M1-Solidus					= C-F
+# Home/End
+key *S-*C-*A-M1-H 				= *S-*C-*A-Home
+key *S-*C-*A-M1-Semicolon 		= *S-*C-*A-End
+key *S-*C-*A-M1-Y 				= *S-C-*A-Home
+key *S-*C-*A-M1-P		 		= *S-C-*A-End
+key *S-*C-*A-M1-Solidus	 		= S-*C-*A-End
+key *S-*C-*A-M1-N		 		= S-*C-*A-Home
 
 
-#key *S-*C-*A-M1-Space 			= *S-*C-*A-Enter		#無変換＋スペース	-> enter
-#key *S-*C-*A-M1-convert			= *S-*C-*A-backspace	#無変換＋変換		-> bs
-#key *S-*C-*A-M1-hiragana		= *S-*C-*A-delete		#無変換＋ひらがな	-> delete
-key S-_0						= S-ReverseSolidus		#S-0 				-> _
-#key M1-Q	= S-Tab
-#key M1-E	= Tab
+#Enter
+key *S-*C-*A-M1-Space			= *S-*C-*A-Enter
 
 
-############################################################################
-#	マウス
-############################################################################
-# カーソル移動（速度1pixel）
-#key M0-C-Up 	= &MouseMove(0, -3)
-#key M0-C-Down	= &MouseMove(0, 3)
-#key M0-C-Left	= &MouseMove(-3, 0)
-#key M0-C-Right	= &MouseMove(3, 0)
-#key M0-C-I 		= &MouseMove(0, -3)
-#key M0-C-K		= &MouseMove(0, 3)
-#key M0-C-J		= &MouseMove(-3, 0)
-#key M0-C-L		= &MouseMove(3, 0)
+# 削除
+key *S-*C-*A-hiragana			= *S-*C-*A-backspace
+#Lenovoキーボード（K0）のみ
+key *S-*C-*A-K0-PrintScreen		= *S-*C-*A-delete
 
-# カーソル移動（速度デフォルト）
-#key M0-Up		= &MouseMove(0, -20)
-#key M0-Down 	= &MouseMove(0, 20)
-#key M0-Left 	= &MouseMove(-20, 0)
-#key M0-Right	= &MouseMove(20, 0)
-#key M0-I		= &MouseMove(0, -20)
-#key M0-K 		= &MouseMove(0, 20)
-#key M0-J 		= &MouseMove(-20, 0)
-#key M0-L		= &MouseMove(20, 0)
-
-# カーソル移動（高速）
-#key M0-M1-Up		= &MouseMove(0, -80)
-#key M0-M1-Down		= &MouseMove(0, 80)
-#key M0-M1-Left		= &MouseMove(-80, 0)
-#key M0-M1-Right 	= &MouseMove(80, 0)
-
-# ホイール
-#key M0-PageUp		= &MouseWheel(120)
-#key M0-PageDown 	= &MouseWheel(-120)
-
-#クリック
-#左
-#key M0-A			= &VK(LButton)
-#key D-R-M0-*A		= &Ignore
-#key M0-Space		= &VK(LButton)
-#key D-R-M0-*Space	= &Ignore
-
-#右
-#key M0-D		= &VK(RButton)
-#key D-R-M0-*D	= &Ignore
-
-#真ん中
-#key M0-S		= &VK(MButton)
-#key D-R-S 		= &Ignore
-
-#
-#第4ボタン
-#key M0-Q 			= &VK(XButton1)
-#key D-R-Q			= &Ignore
-
-#第5ボタン
-#key M0-W 			= &VK(XButton2)
-#key D-R-W			= &Ignore
-
-
-
-############################################################################
-#	ウインドウ
-############################################################################
-#最大化トグル
-key Pause			= &WindowMaximize
-key D-R-Pause		= &Ignore
-
-#最小化
-#key C-Break 		= &WindowMinimize
-
-#閉じる(秀丸／コンソールは独自に上書きしている)
-#key C-ScrollLock	= &WindowClose
-#key A-M1-Esc = &WindowClose
-
-#移動(通常ウインドウとMDI)
-#key M2-E		= &WindowMove(0, -20,MDI)
-#key M2-D		= &WindowMove(0,  20,MDI)
-#key M2-S		= &WindowMove(-20,0 ,MDI)
-#key M2-F		= &WindowMove(20, 0 ,MDI)
-#key M2-F1		= &WindowMonitorTo(primary, 1, true, true)
-#key M2-F2		= &WindowMonitorTo(primary, 0, true, true)
-
-#移動(通常ウインドウ)
-#key M2-C-E		= &WindowMove(0  ,-20) &Sync &WindowMoveVisibly
-#key M2-C-D		= &WindowMove(0  ,20)  &Sync &WindowMoveVisibly
-#key M2-C-S		= &WindowMove(-20,0)   &Sync &WindowMoveVisibly
-#key M2-C-F		= &WindowMove(20 ,0)   &Sync &WindowMoveVisibly
-
-#サイズ(通常ウインドウとMDI)
-#key M2-T		= &WindowResizeToPer(100,90,MDI)	&Sync &WindowMoveVisibly(MDI)
-#key M2-G 		= &WindowResizeToPer(100,110,MDI)	&Sync &WindowMoveVisibly(MDI)
-#key M2-W		= &WindowResizeToPer(90,100,MDI)	&Sync &WindowMoveVisibly(MDI)
-#key M2-R		= &WindowResizeToPer(110,100,MDI)	&Sync &WindowMoveVisibly(MDI)
-
-#サイズ(通常ウインドウ)
-#key M2-C-T		= &WindowResizeToPer(100,90)	&Sync &WindowMoveVisibly
-#key M2-C-G 		= &WindowResizeToPer(100,110)	&Sync &WindowMoveVisibly
-#key M2-C-W		= &WindowResizeToPer(90,100)	&Sync &WindowMoveVisibly
-#key M2-C-R		= &WindowResizeToPer(110,100)	&Sync &WindowMoveVisibly
-
-#画面の左と右側半分で最大化（トグル）
-#Key PrintScreen 	= &Toggle(Lock0,off)
-#Key L0-PrintScreen	= &WindowResizeMoveTo(960,1170,NW,0,24) &Toggle(Lock0,off)
-#Key PrintScreen 	= &WindowResizeMoveTo(960,1170,NE,0,24) &Toggle(Lock0,on)
-#key D-R-PrintScreen = &Ignore
-
-#画面キャプチャ
-#key A-PrintScreen	= PrintScreen
-
-#半透明（トグル）
-#Key ScrollLock		= &WindowSetAlpha(25)
-#key D-R-ScrollLock	= &Ignore
-
-#タブコントロール
-#key A-Right = C-Tab
-#key A-Left	= C-S-Tab
-key A-Right = C-Tab
-key A-Left 	= C-S-Tab
-#key M2-_2 	= C-Tab
-#key M2-_1	= C-S-Tab
-
-#アプリ切り替え
-#key M2-C = A-S-Tab
-#key M2-V = A-Tab
+#タブの操作
+key M1-X						= S-C-Tab
+key M1-C						= C-Tab
+key M1-Z						= S-A-Tab
+key M1-V						= A-Tab
