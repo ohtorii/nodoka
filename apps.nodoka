@@ -1,0 +1,128 @@
+
+############################################################################
+#	Firefox(秀丸のショートカットキーと合わせる)
+#C###########################################################################
+window firefox /firefox\.exe/ : Global
+
+key A-Up	= A-Left
+key A-Down	= A-Right
+
+#タブ間の左右移動
+#key M1-S	= C-S-Tab
+key A-Left	= C-S-Tab
+#key M1-F	= C-Tab
+key A-Right	= C-Tab
+
+#上下スクロール
+key M1-E	= Up
+key M1-D	= Down
+
+key M1-Q	= C-F4
+key A-End	= C-F4
+
+key C-N 	= C-T
+key F3		= C-F
+key F2		= S-F3
+key F1		= F3
+Key C-S-F1	= A-G
+
+#key M1-_3	= A-G &Sync Tab &Sync Tab &Sync C-Left	&Sync Tab
+key M1-A-Left = A-G &Sync Tab &Sync Tab &Sync C-Left	&Sync Tab
+
+#key M1-_4	= A-G &Sync Tab &Sync Tab &Sync C-Right &Sync Tab
+key M1-A-Right = A-G &Sync Tab &Sync Tab &Sync C-Right &Sync Tab
+
+
+############################################################################C
+#	エクセル
+############################################################################
+#window excel /EXCEL\.EXE/ : Global
+#key M1-_2 	= C-PageDown
+#key M1-_1	= C-PageUp
+
+
+############################################################################
+#	エクスプローラ
+############################################################################
+window explore /iexplore\.exe|Explorer\.exe/ : Global
+#フォルダ表示のトグル
+key C-F1	= A-V E O
+
+#表示(詳細)
+key F12		= A-V D Enter
+
+#表示(一覧)
+key C-F12	= A-V R Enter
+
+
+############################################################################
+#	NVIDIA FX Composer
+############################################################################
+#window FXComposer /fxcomposer2\.exe/ : Global
+#key F7 = C-F7
+
+
+############################################################################
+#WinMerge
+############################################################################
+window WinMerge /WinMergeU\.exe:WinMergeWindowClassW:MDIClient/ : Global
+key A-End = C-F4
+#差分への移動
+key C-PageDown 	= A-Down
+key C-PageUp 	= A-Up
+
+
+############################################################################
+#VisualStudio
+############################################################################
+window VisualStudio /devenv\.exe/ : Global
+#key M1-Esc = A-F C
+key A-END = A-F C
+
+############################################################################
+#TortoiseMerge
+############################################################################
+window TortoiseMerge /TortoiseMerge\.exe/ : Global
+key C-PageDown 	= C-Down
+key C-PageUp 	= C-Up
+
+############################################################################
+#	コンソール
+############################################################################
+keyseq $WM_VSCROLL/SB_PAGEUP		= &PostMessage(ToItself, 277, 2, 0)
+keyseq $WM_VSCROLL/SB_PAGEDOWN		= &PostMessage(ToItself, 277, 3, 0)
+keyseq $ConsoleWindowClass/copy		= &PostMessage(ToItself, 274, 65520, 0)
+keyseq $ConsoleWindowClass/paste	= &PostMessage(ToItself, 274, 65521, 0)
+keyseq $ConsoleWindowClass/region	= &PostMessage(ToItself, 274, 65522, 0)
+keyseq $ConsoleWindowClass/scroll	= &PostMessage(ToItself, 274, 65523, 0)
+keyseq $ConsoleWindowClass/search	= &PostMessage(ToItself, 274, 65524, 0)
+keyseq $ConsoleWindowClass/select-all	= &PostMessage(ToItself, 274, 65525, 0)
+
+window  ConsoleWindowClass /^ConsoleWindowClass$/ : Global
+key A-F4 C-ScrollLock   = A-Space C		# ウィンドウを閉じる
+key PageUp		= $WM_VSCROLL/SB_PAGEUP
+key PageDown	= $WM_VSCROLL/SB_PAGEDOWN
+key C-A			= $ConsoleWindowClass/select-all
+#key C-Insert	= $ConsoleWindowClass/copy
+#key C-C			= $ConsoleWindowClass/copy
+key S-Insert	= $ConsoleWindowClass/paste
+key C-V			= $ConsoleWindowClass/paste
+key C-F			= $ConsoleWindowClass/search
+key F3			= $ConsoleWindowClass/search
+
+############################################################################
+#Google Chrome
+############################################################################
+window chrome /chrome\.exe:/ : Global
+key M1-Q	= C-F4
+key A-End	= C-F4
+key F3		= C-F
+key F2		= S-F3
+key F1		= F3
+
+#タブ間の左右移動
+#key M1-S	= C-S-Tab
+#key M1-F	= C-Tab
+#上下スクロール
+key M1-E	= Up
+key M1-D	= Down
