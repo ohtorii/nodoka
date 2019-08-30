@@ -6,9 +6,14 @@ REM
 setlocal
 set NODOKA=C:\Program Files\nodoka
 
-call :copy personal.nodoka
+call :copy apps.nodoka
 call :copy hidemaru.nodoka
+call :copy mouse.nodoka
+call :copy personal.nodoka
 call :copy vim.nodoka
+call :copy vim_like.nodoka
+call :copy window.nodoka
+
 exit /b 0
 
 
