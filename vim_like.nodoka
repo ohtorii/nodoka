@@ -1,0 +1,46 @@
+#-------------------------------
+#VIM ライクな移動
+#-------------------------------
+#移動
+key *S-*C-*A-M1-H 				= *S-*C-*A-Left
+key *S-*C-*A-M1-J 				= *S-*C-*A-Down
+key *S-*C-*A-M1-K 				= *S-*C-*A-Up
+key *S-*C-*A-M1-L 				= *S-*C-*A-Right
+key *S-*C-*A-M1-CircumflexAccent= *S-*C-*A-Home
+key *S-*C-*A-M1-_4 				= *S-*C-*A-End
+
+#高度な移動
+key M1-C-f	= PageDown
+key M1-C-b	= PageUp
+key M1-C-u	= Up Up Up Up Up Up Up Up
+key M1-C-d	= Down Down Down Down Down Down Down Down
+key M1-w	= C-Right
+key M1-b	= C-Left
+
+#削除
+key M1-x						= Delete
+key M1-S-x						= backspace
+
+
+#copy/past
+key M1-y 						= Home S-End C-C Home
+key M1-d						= Home S-End C-X
+key M1-p						= C-V
+
+#undo/redo
+key M1-u						= C-z
+key M1-C-r						= C-y
+
+#search
+#カーソル位置の単語を検索（仮実装）
+#key M1-S-Colon					= C-F
+#key M1-Solidus					= C-F
+
+
+#key *S-*C-*A-M1-Space 			= *S-*C-*A-Enter		#無変換＋スペース	-> enter
+#key *S-*C-*A-M1-convert			= *S-*C-*A-backspace	#無変換＋変換		-> bs
+#key *S-*C-*A-M1-hiragana		= *S-*C-*A-delete		#無変換＋ひらがな	-> delete
+key S-_0						= S-ReverseSolidus		#S-0 				-> _
+#key M1-Q	= S-Tab
+#key M1-E	= Tab
+
