@@ -6,6 +6,11 @@ REM
 setlocal
 set NODOKA=C:\Program Files\nodoka
 
+if not exist "%NODOKA%" (
+	echo Not found nodoka.
+	exit /b 1
+)
+
 call :copy apps.nodoka
 call :copy hidemaru.nodoka
 call :copy mouse.nodoka
@@ -14,6 +19,7 @@ call :copy vim.nodoka
 call :copy vim_like.nodoka
 call :copy window.nodoka
 
+pause
 exit /b 0
 
 
