@@ -180,8 +180,11 @@ key *S-*C-*A-M1-Space			= *S-*C-*A-Enter
 
 # 削除
 key *S-*C-*A-hiragana			= *S-*C-*A-backspace
-#Lenovoキーボード（K0）のみ
-key *S-*C-*A-K0-PrintScreen		= *S-*C-*A-delete
+
+if (USE_LENOVO_T540P)
+	#Lenovoキーボード（K0）のみ
+	key *S-*C-*A-K0-PrintScreen		= *S-*C-*A-delete
+endif
 
 #タブの操作
 key M1-X						= S-C-Tab
