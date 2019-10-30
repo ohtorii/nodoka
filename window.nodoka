@@ -59,6 +59,13 @@ key A-Left 	= C-S-Tab
 #key M2-_2 	= C-Tab
 #key M2-_1	= C-S-Tab
 
+#タブの操作（その2）
+#key M1-X						= S-C-Tab
+#key M1-C						= C-Tab
+#key M1-Z						= S-A-Tab
+#key M1-V						= A-Tab
+
+
 #アプリ切り替え
 #key M2-C = A-S-Tab
 #key M2-V = A-Tab

@@ -18,6 +18,7 @@ call :copy personal.nodoka
 call :copy vim.nodoka
 call :copy vim_like.nodoka
 call :copy window.nodoka
+call :copy esrille.nodoka
 
 pause
 exit /b 0

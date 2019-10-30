@@ -1,5 +1,5 @@
 #-------------------------------
-#VIM ライクな移動
+#VIM
 #-------------------------------
 #移動
 key *S-*C-*A-M1-H 				= *S-*C-*A-Left
@@ -36,11 +36,7 @@ key M1-C-r						= C-y
 #key M1-S-Colon					= C-F
 #key M1-Solidus					= C-F
 
-
-#key *S-*C-*A-M1-Space 			= *S-*C-*A-Enter		#無変換＋スペース	-> enter
-#key *S-*C-*A-M1-convert			= *S-*C-*A-backspace	#無変換＋変換		-> bs
-#key *S-*C-*A-M1-hiragana		= *S-*C-*A-delete		#無変換＋ひらがな	-> delete
-key S-_0						= S-ReverseSolidus		#S-0 				-> _
+#タブ移
 #key M1-Q	= S-Tab
 #key M1-E	= Tab
 
