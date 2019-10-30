@@ -10,16 +10,16 @@ key *S-*C-*A-M1-CircumflexAccent= *S-*C-*A-Home
 key *S-*C-*A-M1-_4 				= *S-*C-*A-End
 
 #çÇìxÇ»à⁄ìÆ
-key M1-C-f	= PageDown
-key M1-C-b	= PageUp
-key M1-C-u	= Up Up Up Up Up Up Up Up
-key M1-C-d	= Down Down Down Down Down Down Down Down
-key M1-w	= C-Right
-key M1-b	= C-Left
+key M1-*S-f	= *S-PageDown
+key M1-*S-b	= *S-PageUp
+key M1-*S-u	= *S-Up *S-Up *S-Up *S-Up *S-Up *S-Up *S-Up *S-Up
+key M1-*S-d	= *S-Down *S-Down *S-Down *S-Down *S-Down *S-Down *S-Down Down
+#key M1-w	= C-Right
+#key M1-b	= C-Left
 
 #çÌèú
-key M1-x						= Delete
-key M1-S-x						= backspace
+#key M1-x						= Delete
+#key M1-S-x						= backspace
 
 
 #copy/past
