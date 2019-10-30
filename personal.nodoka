@@ -100,11 +100,11 @@ mod mod1 = !!無変換
 mod control += !!convert
 
 #Space and Shift スペースのリピート無し版 Spaceキーだけ押すとスペースだが、他のキーと組み合わせるとシフト代わりになる。
-mod shift += !!Space
-key R-*Space = &Ignore
+#mod shift += !!Space
+#key R-*Space = &Ignore
 
 #Space and Shift スペースのリピート有り版 Spaceキーだけ押すとスペースだが、他のキーと同時に押すとシフト代わりになる。
-#mod shift += !!!Space
+mod shift += !!!Space
 
 #ウインドウ閉じる(MDI)
 #key M1-Esc = &WindowClose(MDI)
@@ -154,6 +154,15 @@ key *S-*C-*A-M1-_0			= S-ReverseSolidus		#M1-0 				-> _
 key *S-*C-*A-M1-Space 		= *S-*C-*A-Enter		#無変換＋スペース	-> enter
 key *S-*C-*A-M1-convert		= *S-*C-*A-backspace	#無変換＋変換		-> backspace
 key *S-*C-*A-*M1-hiragana	= *S-*C-*A-delete		#無変換＋ひらがな	-> delete
+
+#copy & past
+key M1-c					= C-c
+key M1-v					= C-v
+key M1-x					= C-x
+key M1-z					= C-z
+key M1-s					= C-s
+key M1-a					= C-a
+
 
 if (USE_LENOVO_T540P)
 	#Lenovoキーボード（K0）のみ
