@@ -21,6 +21,7 @@ endif
 #  include	"default2.nodoka"	# Emacs ƒ‰ƒCƒN‚È‚³‚Ü‚´‚Ü‚Èİ’è
 #endif
 
+def key AlienFX				=    0x69
 
 # Global keymap İ’è
 keymap Global
