@@ -23,13 +23,13 @@ key M1-*S-d	= *S-Down *S-Down *S-Down *S-Down *S-Down *S-Down *S-Down Down
 
 
 #copy/past
-key M1-y 						= Home S-End C-C Home
-key M1-d						= Home S-End C-X
-key M1-p						= C-V
+#key M1-y 						= Home S-End C-C Home
+#key M1-d						= Home S-End C-X
+#key M1-p						= C-V
 
 #undo/redo
-key M1-u						= C-z
-key M1-C-r						= C-y
+#key M1-u						= C-z
+#key M1-C-r						= C-y
 
 #search
 #カーソル位置の単語を検索（仮実装）

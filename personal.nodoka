@@ -84,7 +84,6 @@ key *半角/全角 = *Applications
 def option UnitID = K1 0 0 0
 
 
-#mod mod1 = !!Space
 mod mod1 = !!無変換
 #mod mod1 = !!変換
 
@@ -101,8 +100,8 @@ mod mod1 = !!無変換
 mod control += !!convert
 
 #Space and Shift スペースのリピート無し版 Spaceキーだけ押すとスペースだが、他のキーと組み合わせるとシフト代わりになる。
-mod shift += !!Space
-key R-*Space = &Ignore
+mod shift 		+= 	!!Space
+key R-*Space 	= 	&Ignore
 
 #Space and Shift スペースのリピート有り版 Spaceキーだけ押すとスペースだが、他のキーと同時に押すとシフト代わりになる。
 #mod shift += !!!Space
@@ -146,15 +145,14 @@ key C-半角/全角 = Applications
 include "vim_like.nodoka"
 #include "esrille.nodoka"
 #include "mouse.nodoka"
-#include "window.nodoka"
-
+include "window.nodoka"
 
 key *S-*C-*A-M1-Space		= *S-*C-*A-Enter		#M1+Space -> Enter
 key S-_0					= S-ReverseSolidus		#S-0 				-> _
 key *S-*C-*A-M1-_0			= S-ReverseSolidus		#M1-0 				-> _
-key *S-*C-*A-M1-Space 		= *S-*C-*A-Enter		#無変換＋スペース	-> enter
 key *S-*C-*A-M1-convert		= *S-*C-*A-backspace	#無変換＋変換		-> backspace
 key *S-*C-*A-*M1-hiragana	= *S-*C-*A-delete		#無変換＋ひらがな	-> delete
+key C-*Space = &WaitKey(10) C-Space &WaitKey(0) #ウェイトを入れると秀丸エディタでキーを認識するようになります。
 
 #copy & past
 key M1-c					= C-c
