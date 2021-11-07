@@ -62,7 +62,7 @@ def option FakeUp = enable 20 00
 # ˆÈ‰º‚ÉA‚²©g‚Ìİ’è‚ğŒä‘‚«‰º‚³‚¢B
 #def option SendTextDelay = 50
 #key *IC- =
-#mod mod0 = !!‰p”
+mod mod0 = !!‰p”
 
 # LeftControl‚ğCapsLock‚É
 #mod control -= LeftControl
@@ -72,12 +72,12 @@ def option FakeUp = enable 20 00
 #mod windows += !LeftControl
 #key *LeftControl = *LeftWindows
 
-
+#if (FALSE)
 # CapsLock‚ğControl‚É
-def subst *‰p” = *‰p” # from http://d.hatena.ne.jp/kaosf/20101120
-mod control += ‰p”
-key *‰p” = *LeftControl
-
+#def subst *‰p” = *‰p” # from http://d.hatena.ne.jp/kaosf/20101120
+#mod control += ‰p”
+#key *‰p” = *LeftControl
+#endif
 
 #”¼Šp/‘SŠp‚ğApplicationsƒL[‚É
 key *”¼Šp/‘SŠp = *Applications
