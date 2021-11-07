@@ -8,13 +8,15 @@
 ############################################################################
 #	秀丸＆秀丸メール　共通設定
 ############################################################################
-#window hidemaru /HIDEMARU\.EXE/ : Global
+window hidemaru /HIDEMARU\.EXE/ : Global
 
 #タブ間の左右移動
 #key M1-F		= A-Right
 #key M1-S		= A-Left
-#key A-Right 	= A-Right
-#key A-Left 		= A-Left
+
+#Memo: グローバル設定を上書きする
+key A-Right 	= A-Right
+key A-Left 		= A-Left
 
 #分割ウインドウの上下移動
 #key M1-E		= A-Up
