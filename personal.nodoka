@@ -21,6 +21,7 @@ endif
 #  include	"default2.nodoka"	# Emacs ƒ‰ƒCƒN‚È‚³‚Ü‚´‚Ü‚ÈÝ’è
 #endif
 
+#DELL AlienWare note-pc
 def key AlienFX				=    0x69
 
 # Global keymap Ý’è
@@ -30,7 +31,8 @@ keymap Global
 #	•¡”ƒL[ƒ{[ƒh‚Ì’è‹`
 #-----------------------------------------------------------------------
 #Thispad keyboard
-def option UnitID = K1 0 0 0
+#def option UnitID = K1 0 0 0
+
 #Realforce USB keyboard
 #def option UnitID = K2 132190 1954 0
 #def option UnitID = K3 1304 1 0
@@ -62,7 +64,7 @@ def option FakeUp = enable 20 00
 # ˆÈ‰º‚ÉA‚²Ž©g‚ÌÝ’è‚ðŒä‘‚«‰º‚³‚¢B
 #def option SendTextDelay = 50
 #key *IC- =
-mod mod0 = !!‰p”
+#mod mod0 = !!‰p”
 
 # LeftControl‚ðCapsLock‚É
 #mod control -= LeftControl
@@ -79,8 +81,17 @@ mod mod0 = !!‰p”
 #key *‰p” = *LeftControl
 #endif
 
+#CapsLockƒL[2‰ñ‚ÅIME ON‚É‚µ‚ÄA1‰ñ‚ÅIME OFF‚É‚µ‚Ü‚·
+def option UseDoublePress = enable 300 10
+key ‰p” = &Ignore
+key S-‰p” = ‰p”
+key U-DP-~IL-‰p” = $ToggleIME
+key IL-~DP-‰p” = $ToggleIME
+
+
 #”¼Šp/‘SŠp‚ðApplicationsƒL[‚É
-key *”¼Šp/‘SŠp = *Applications
+#key *”¼Šp/‘SŠp = *Applications
+
 def option UnitID = K1 0 0 0
 
 
@@ -140,15 +151,15 @@ keymap Global
 #	ƒL[ƒ{[ƒh
 ############################################################################
 #ƒƒjƒ…[ƒL[
-key C-”¼Šp/‘SŠp = Applications
+#key C-”¼Šp/‘SŠp = Applications
 
-include "vim_like.nodoka"
+#include "vim_like.nodoka"
 #include "esrille.nodoka"
 #include "mouse.nodoka"
 include "window.nodoka"
 
 key *S-*C-*A-M1-Space		= *S-*C-*A-Enter		#M1+Space -> Enter
-key S-_0					= S-ReverseSolidus		#S-0 				-> _
+#key S-_0					= S-ReverseSolidus		#S-0 				-> _
 key *S-*C-*A-M1-_0			= S-ReverseSolidus		#M1-0 				-> _
 key *S-*C-*A-M1-convert		= *S-*C-*A-backspace	#–³•ÏŠ·{•ÏŠ·		-> backspace
 key *S-*C-*A-*M1-hiragana	= *S-*C-*A-delete		#–³•ÏŠ·{‚Ð‚ç‚ª‚È	-> delete
