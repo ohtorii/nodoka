@@ -31,13 +31,12 @@ keymap Global
 #	複数キーボードの定義
 #-----------------------------------------------------------------------
 #Thispad keyboard
-#def option UnitID = K1 0 0 0
+#def  UnitID = K1 0 0 0
+#def option FakeUp = enable 20 00
 
 #Realforce USB keyboard
 #def option UnitID = K2 132190 1954 0
 #def option UnitID = K3 1304 1 0
-
-def option FakeUp = enable 20 00
 
 
 
@@ -64,24 +63,26 @@ def option FakeUp = enable 20 00
 # 以下に、ご自身の設定を御書き下さい。
 #def option SendTextDelay = 50
 #key *IC- =
-#mod mod0 = !!英数
+mod mod0 = !!Applications
 
-# LeftControlをCapsLockに
-#mod control -= LeftControl
-#key *LeftControl = *英数
+# RightControlをCapsLockに
+#mod control -= RightControl
+#key *RightControl = *英数
 
-# LeftControlをWindowsキーに
-#mod windows += !LeftControl
-#key *LeftControl = *LeftWindows
+# RightControlをWindowsキーに
+#mod windows += !RightControl
+#key *RightControl = *LeftWindows
 
-#if (FALSE)
+#
 # CapsLockをControlに
+#
 #def subst *英数 = *英数 # from http://d.hatena.ne.jp/kaosf/20101120
 #mod control += 英数
-#key *英数 = *LeftControl
-#endif
+#key *英数 = *RightControl
 
+#
 #CapsLockキー2回でIME ONにして、1回でIME OFFにします
+#
 def option UseDoublePress = enable 300 10
 key 英数 = &Ignore
 key S-英数 = 英数
@@ -92,7 +93,7 @@ key IL-~DP-英数 = $ToggleIME
 #半角/全角をApplicationsキーに
 #key *半角/全角 = *Applications
 
-def option UnitID = K1 0 0 0
+#def option UnitID = K1 0 0 0
 
 
 mod mod1 = !!無変換
@@ -107,20 +108,28 @@ mod mod1 = !!無変換
 #key *hiragana = *RCtrl
 #key *convert	= *RCtrl
 
+#
 #変換だけ押すと変換だが、ほかのキーと組み合わせるとコントロール代わりになる
+#
 mod control += !!convert
 
+#
 #Space and Shift スペースのリピート無し版 Spaceキーだけ押すとスペースだが、他のキーと組み合わせるとシフト代わりになる。
+#
 mod shift 		+= 	!!Space
-key R-*Space 	= 	&Ignore
+key R-*Space 	= 	&Ignore  #シフトを押したけれども、取りやめた時にスペースが入ることを防ぐ
 
 #Space and Shift スペースのリピート有り版 Spaceキーだけ押すとスペースだが、他のキーと同時に押すとシフト代わりになる。
 #mod shift += !!!Space
 
-#ウインドウ閉じる(MDI)
-#key M1-Esc = &WindowClose(MDI)
+#
+#RightControl  -> IME-Off
+#	pass
 
-
+#RightControl -> IME-ON
+#mod ctrl += !!RightControl
+#key ~IL-*RightControl = $ToggleIME
+#key IL-*RightControl = &Ignore
 
 #-------------------------------
 #	システム系
