@@ -15,8 +15,8 @@ window hidemaru /HIDEMARU\.EXE/ : Global
 #key M1-S		= A-Left
 
 #Memo: グローバル設定を上書きする
-key A-Right 	= A-Right
-key A-Left 		= A-Left
+#key A-Right 	= A-Right
+#key A-Left 		= A-Left
 
 #分割ウインドウの上下移動
 #key M1-E		= A-Up
