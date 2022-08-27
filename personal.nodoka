@@ -22,7 +22,10 @@ endif
 #endif
 
 #DELL AlienWare note-pc
-def key AlienFX				=    0x69
+if (USE_DELL_ALIENWARE)
+	def key AlienFX=0x69
+endif
+
 
 # Global keymap İ’è
 keymap Global
@@ -83,14 +86,24 @@ mod mod0 = !!Applications
 #
 #CapsLockƒL[2‰ñ‚ÅIME ON‚É‚µ‚ÄA1‰ñ‚ÅIME OFF‚É‚µ‚Ü‚·
 #
-def option UseDoublePress = enable 300 10
+#def option UseDoublePress = enable 300 10
+#key ‰p” = &Ignore
+#key S-‰p” = ‰p”  #Capslock ON
+#key U-DP-~IL-‰p” = $ToggleIME
+#key IL-~DP-‰p” = $ToggleIME
+
+#
+#Capslock‚ÅIME@Off
+#		@ƒŠƒs[ƒg‚Å@On
+#
 key ‰p” = &Ignore
-key S-‰p” = ‰p”
-key U-DP-~IL-‰p” = $ToggleIME
-key IL-~DP-‰p” = $ToggleIME
+key U-~R-IL-‰p”  = $ToggleIME
+key U-R-~IL-‰p”  = $ToggleIME
 
 
+#
 #”¼Šp/‘SŠp‚ğApplicationsƒL[‚É
+#
 #key *”¼Šp/‘SŠp = *Applications
 
 #def option UnitID = K1 0 0 0
@@ -151,7 +164,7 @@ key R-*Space 	= 	&Ignore  #ƒVƒtƒg‚ğ‰Ÿ‚µ‚½‚¯‚ê‚Ç‚àAæ‚è‚â‚ß‚½‚ÉƒXƒy[ƒX‚ª“ü‚é‚
 ############################################################################
 #	GŠÛ•GŠÛƒ[ƒ‹
 ############################################################################
-include "hidemaru.nodoka"
+#include "hidemaru.nodoka"
 #include "vim.nodoka"
 #include "apps.nodoka"
 
