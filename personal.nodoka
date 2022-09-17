@@ -26,6 +26,10 @@ if (USE_DELL_ALIENWARE)
 	def key AlienFX=0x69
 endif
 
+if (USE_KINESIS_INSERT)
+	def key KinesisInsert=0x56
+endif
+
 
 # Global keymap ê›íË
 keymap Global
@@ -100,7 +104,13 @@ key âpêî = &Ignore
 key U-~R-IL-âpêî  = $ToggleIME
 key U-R-~IL-âpêî  = $ToggleIME
 
+if (USE_KINESIS_INSERT)
+	#
+	# Toggle IME
+	#
+	key KinesisInsert = $ToggleIME
 
+endif
 #
 #îºäp/ëSäpÇApplicationsÉLÅ[Ç…
 #
