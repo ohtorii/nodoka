@@ -1,0 +1,41 @@
+# https://appletllc.com/2023/02/01/ime-on-off%e6%96%b9%e6%b3%95/#comment-43
+def key ImeOn = 0xf2
+def key ImeOff = 0xf1
+
+#----------------------------------------------------------------------------
+#	K3
+#----------------------------------------------------------------------------
+key *K3-X = *ImeOn
+key *K3-Z = *ImeOff
+
+#à»â∫ÇÕÇ§Ç‹Ç≠ìÆçÏÇπÇ∏
+#IME On
+#key *IC-K3-X = &SetImeStatus(on)
+#IME Off 
+#key *IC-K3-Z = &SetImeStatus(off)
+
+
+#----------------------------------------------------------------------------
+#CapsLockÉLÅ[2âÒÇ≈IME ONÇ…ÇµÇƒÅA1âÒÇ≈IME OFFÇ…ÇµÇ‹Ç∑
+#----------------------------------------------------------------------------
+#def option UseDoublePress = enable 300 10
+#key âpêî = &Ignore
+#key S-âpêî = âpêî  #Capslock ON
+#key U-DP-~IL-âpêî = $ToggleIME
+#key IL-~DP-âpêî = $ToggleIME
+
+
+#----------------------------------------------------------------------------
+#CapslockÇ≈IMEÅ@	 Off
+#		Å@ÉäÉsÅ[ÉgÇ≈ On
+#----------------------------------------------------------------------------
+key âpêî = &Ignore
+key U-~R-IL-âpêî  = $ToggleIME
+key U-R-~IL-âpêî  = $ToggleIME
+
+if (USE_KINESIS_INSERT)
+	#
+	# Toggle IME
+	#
+	key KinesisInsert = $ToggleIME
+endif

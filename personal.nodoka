@@ -37,19 +37,29 @@ keymap Global
 #-----------------------------------------------------------------------
 #	複数キーボードの定義
 #-----------------------------------------------------------------------
-#Thispad keyboard
-#def  UnitID = K1 0 0 0
+#def option UnitID = K1 0 0 0
+if (USE_DELL_ALIENWARE)
+	# Note-PC
+	def option UnitID = K1 3426 10780 0
+	# Kinesis Advantage2 LF
+	def option UnitID = K2 10730 258 1
+	# SayoDevice. Mini Mechanicl keypad
+	def option UnitID = K3 32905 3 0
+endif
+
 #def option FakeUp = enable 20 00
 
-#Realforce USB keyboard
-#def option UnitID = K2 132190 1954 0
-#def option UnitID = K3 1304 1 0
-
-
-
+#Debug
+#key K0-A = &HelpMessage("nodoka", "K0です")
 #key K1-A = &HelpMessage("nodoka", "K1です")
 #key K2-A = &HelpMessage("nodoka", "K2です")
- 
+#key K3-A = &HelpMessage("nodoka", "K3です")
+
+
+#def option FocusChange = enable
+#window notepad /notepad\.exe/ : Global
+#key U-FocusChange = &HelpMessage("nodoka", "メモ帳です")
+
 # シフト+F2: 日本語キーボード、英語キーボード 切り替えトグル
 #if ( USE109 )
 #  if ( USE104on109 )
@@ -86,31 +96,6 @@ mod mod0 = !!Applications
 #def subst *英数 = *英数 # from http://d.hatena.ne.jp/kaosf/20101120
 #mod control += 英数
 #key *英数 = *RightControl
-
-#
-#CapsLockキー2回でIME ONにして、1回でIME OFFにします
-#
-#def option UseDoublePress = enable 300 10
-#key 英数 = &Ignore
-#key S-英数 = 英数  #Capslock ON
-#key U-DP-~IL-英数 = $ToggleIME
-#key IL-~DP-英数 = $ToggleIME
-
-#
-#CapslockでIME　Off
-#		　リピートで　On
-#
-key 英数 = &Ignore
-key U-~R-IL-英数  = $ToggleIME
-key U-R-~IL-英数  = $ToggleIME
-
-if (USE_KINESIS_INSERT)
-	#
-	# Toggle IME
-	#
-	key KinesisInsert = $ToggleIME
-
-endif
 #
 #半角/全角をApplicationsキーに
 #
@@ -189,6 +174,7 @@ keymap Global
 #include "esrille.nodoka"
 #include "mouse.nodoka"
 include "window.nodoka"
+include "ime.nodoka"
 
 key *S-*C-*A-M1-Space		= *S-*C-*A-Enter		#M1+Space -> Enter
 #key S-_0					= S-ReverseSolidus		#S-0 				-> _

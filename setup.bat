@@ -19,6 +19,7 @@ call :copy vim.nodoka
 call :copy vim_like.nodoka
 call :copy window.nodoka
 call :copy esrille.nodoka
+call :copy ime.nodoka
 
 pause
 exit /b 0
