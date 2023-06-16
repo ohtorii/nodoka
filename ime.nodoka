@@ -2,18 +2,34 @@
 def key ImeOn = 0xf2
 def key ImeOff = 0xf1
 
+# for 109 keyboard
+def key ひらがな Hiragana		= 0x70 # ひらがな カタカナ ローマ字
+def key UnderBackSlash			= 0x73 # ＼_
+def key 変換 Convert			= 0x79 # 変換(次候補) 前候補 全候補
+def key 無変換 NonConvert		= 0x7b # 無変換
+def key YenSign Yen			= 0x7d # \|
+
+
 #----------------------------------------------------------------------------
 #	K3
 #----------------------------------------------------------------------------
-key *K3-X = *ImeOn
-key *K3-Z = *ImeOff
+#key D-K3-X = ImeOn
+#key U-K3-X = ImeOn
+#key D-K3-*IL-*IC-Z = ImeOff
+#key U-K3-*IL-*IC-Z = ImeOff
 
-#以下はうまく動作せず
-#IME On
-#key *IC-K3-X = &SetImeStatus(on)
-#IME Off 
-#key *IC-K3-Z = &SetImeStatus(off)
+#----------------------------------------------------------------------------
+# 変換でIMEオン、無変換でIMEオフ 
+#----------------------------------------------------------------------------
+#if (! USE104 )
+	#key ~IL-変換= ImeOn                                             # 変換 => IME ON
+	#key IL-*IC-無変換= ImeOff                                       # IME ON中に 無変換 => IME OFF
+	#key IL-*IC-変換= &SetImeConvStatus(0x0019)                      # IME ON中に 変換 => ひらがなモード
 
+	key ~IL-変換= $ToggleIME                                             # 変換 => IME ON
+	key IL-*IC-無変換= $ToggleIME                                         # IME ON中に 無変換 => IME OFF
+	key IL-*IC-変換= &SetImeConvStatus(0x0019)                           # IME ON中に 変換 => ひらがなモード
+#endif
 
 #----------------------------------------------------------------------------
 #CapsLockキー2回でIME ONにして、1回でIME OFFにします
@@ -29,9 +45,11 @@ key *K3-Z = *ImeOff
 #CapslockでIME　	 Off
 #		　リピートで On
 #----------------------------------------------------------------------------
-key 英数 = &Ignore
-key U-~R-IL-英数  = $ToggleIME
-key U-R-~IL-英数  = $ToggleIME
+if (! USE104 )
+	key 英数 = &Ignore
+	key U-~R-IL-英数  = $ToggleIME
+	key U-R-~IL-英数  = $ToggleIME
+endif
 
 if (USE_KINESIS_INSERT)
 	#

@@ -37,7 +37,7 @@ key L0-_0 = S-Home C-X		#(d0)カーソル位置から行頭まで削除
 #keymap2 ex_mode
 #key L0-*S-*C-*A-W = &Prefix(ex_mode_save)
 
-keymap Global
+#keymap Global
 
 #---------------------------------------------------------------------------
 #	カーソル移動
