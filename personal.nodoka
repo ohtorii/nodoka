@@ -9,9 +9,9 @@ include "read-keyboard-define.nodoka"                                   #1. キー
 keymap Global                                                           #2. グローバルキーマップの設定
   #3. 便宜上定義するもの 不要なら削除あるいはコメント化可能ですが、キーバインド出力は設定ファイルの解析に役立ちます。
 #key C-A-D = &DescribeBindings                                           # (1) Ctrl-Alt-Dキーで、現在のキーバインド情報をログ出力
-key S-F1= &DescribeBindings                                             # (2) Shift-F1キーで、現在のキーバインド情報をログ出力
+#key S-F1= &DescribeBindings                                             # (2) Shift-F1キーで、現在のキーバインド情報をログ出力
 #key F1 = &SendPostMessage("PostTray",,"のどか", 0x0205, 0, 0)              # (3) F1キーで、のどかのメニューを開く
-include "Shift-F2_toggle_US-JP-Keyboard.nodoka"                        # (4) Shift-F2キーで英語と日本語キーボード配列を切り替える設定
+#include "Shift-F2_toggle_US-JP-Keyboard.nodoka"                        # (4) Shift-F2キーで英語と日本語キーボード配列を切り替える設定
   #
   #4. サンプル設定
   # 注1；(1)から(7)は併用できません。同時に有効にしないでください。
