@@ -1,3 +1,4 @@
+ #---- begin dot.nodoka ‚Ìƒtƒ@ƒCƒ‹“à—e‚ğƒRƒs[‚µ‚Ä‚¢‚é ----
   #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   # Nodoka - dotjp.nodoka
   # Copyright (C) 1999-2005, TAGA Nayuta <nayuta@users.sourceforge.net>
@@ -10,7 +11,7 @@ keymap Global                                                           #2. ƒOƒ
 #key C-A-D = &DescribeBindings                                           # (1) Ctrl-Alt-DƒL[‚ÅAŒ»İ‚ÌƒL[ƒoƒCƒ“ƒhî•ñ‚ğƒƒOo—Í
 key S-F1= &DescribeBindings                                             # (2) Shift-F1ƒL[‚ÅAŒ»İ‚ÌƒL[ƒoƒCƒ“ƒhî•ñ‚ğƒƒOo—Í
 #key F1 = &SendPostMessage("PostTray",,"‚Ì‚Ç‚©", 0x0205, 0, 0)              # (3) F1ƒL[‚ÅA‚Ì‚Ç‚©‚Ìƒƒjƒ…[‚ğŠJ‚­
-#include "Shift-F2_toggle_US-JP-Keyboard.nodoka"                        # (4) Shift-F2ƒL[‚Å‰pŒê‚Æ“ú–{ŒêƒL[ƒ{[ƒh”z—ñ‚ğØ‚è‘Ö‚¦‚éİ’è
+include "Shift-F2_toggle_US-JP-Keyboard.nodoka"                        # (4) Shift-F2ƒL[‚Å‰pŒê‚Æ“ú–{ŒêƒL[ƒ{[ƒh”z—ñ‚ğØ‚è‘Ö‚¦‚éİ’è
   #
   #4. ƒTƒ“ƒvƒ‹İ’è
   # ’1G(1)‚©‚ç(7)‚Í•¹—p‚Å‚«‚Ü‚¹‚ñB“¯‚É—LŒø‚É‚µ‚È‚¢‚Å‚­‚¾‚³‚¢B
@@ -32,9 +33,16 @@ key S-F1= &DescribeBindings                                             # (2) Sh
   #
   #5. ƒ†[ƒU[ƒJƒXƒ^ƒ€İ’è
   #  ˆÈ‰º‚ÉA‚²©g‚Ìİ’è‚ğŒä‘‚«‰º‚³‚¢B‚±‚Ìs‚Ííœ‰Â”\‚Å‚·B
+# ---- end dot.nodoka ----
 
-
-
+if ( USE104on109 )
+	# ---- begin 104on109.nodoka ‚Ìİ’è‚ğæ‚èÁ‚· ----
+	def subst    *–³•ÏŠ·	= *–³•ÏŠ·
+	def subst    *•ÏŠ·		= *•ÏŠ·
+	def subst    *‚Ğ‚ç‚ª‚È	= *‚Ğ‚ç‚ª‚È
+	def subst    *‰p”		= *‰p”
+	# ---- end 104on109.nodoka ----
+endif
 
 
 #DELL AlienWare note-pc
@@ -168,7 +176,7 @@ key R-*Space 	= 	&Ignore  #ƒVƒtƒg‚ğ‰Ÿ‚µ‚½‚¯‚ê‚Ç‚àAæ‚è‚â‚ß‚½‚ÉƒXƒy[ƒX‚ª“ü‚é‚
 #include "esrille.nodoka"
 #include "mouse.nodoka"
 include "window.nodoka"
-include "ime.nodoka"
+# include "ime.nodoka"
 
 if (! USE104 )
 	key *S-*C-*A-M1-Space		= *S-*C-*A-Enter		#M1+Space -> Enter
