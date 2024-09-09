@@ -1,6 +1,6 @@
 @echo off
 REM
-REM Windows‚ÌŠÂ‹«İ’è
+REM Windows‚ÌŠÂ‹«İ’è(ŠÇ—ÒŒ ŒÀ‚ÅÀs‚·‚é‚±‚Æ)
 REM
 
 setlocal
@@ -27,7 +27,7 @@ exit /b 0
 
 :copy
 echo %1
-REM copy /Y "%~dp0%1" "%NODOKA%"
-del /F "%NODOKA%\%1"
-mklink /H "%NODOKA%\%1" "%~dp0%1"
+copy /Y "%~dp0%1" "%NODOKA%"
+REM del /F "%NODOKA%\%1"
+REM mklink /H "%NODOKA%\%1" "%~dp0%1"
 exit /b 0
