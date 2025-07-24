@@ -9,6 +9,9 @@
 #	秀丸＆秀丸メール　共通設定
 ############################################################################
 window hidemaru /HIDEMARU\.EXE/ : Global
+key A-Right = C-Tab
+key A-Left 	= C-S-Tab
+
 
 #タブ間の左右移動
 #key M1-F		= A-Right

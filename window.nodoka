@@ -56,8 +56,8 @@ key M0-S-Right		= &WindowResizeToPer(110,100)	&Sync &WindowMoveVisibly
 #タブコントロール
 #key A-Right = C-Tab
 #key A-Left	= C-S-Tab
-key A-Right = C-Tab
-key A-Left 	= C-S-Tab
+#key A-Right = C-Tab
+#key A-Left 	= C-S-Tab
 #key M0-_2 	= C-Tab
 #key M0-_1	= C-S-Tab
 
