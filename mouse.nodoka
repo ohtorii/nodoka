@@ -4,56 +4,77 @@
 ############################################################################
 
 # カーソル移動（速度1pixel）
-#key M0-C-Up 	= &MouseMove(0, -3)
-#key M0-C-Down	= &MouseMove(0, 3)
-#key M0-C-Left	= &MouseMove(-3, 0)
-#key M0-C-Right	= &MouseMove(3, 0)
-#key M0-C-I 		= &MouseMove(0, -3)
-#key M0-C-K		= &MouseMove(0, 3)
-#key M0-C-J		= &MouseMove(-3, 0)
-#key M0-C-L		= &MouseMove(3, 0)
+#key M1-C-Up 	= &MouseMove(0, -3)
+#key M1-C-Down	= &MouseMove(0, 3)
+#key M1-C-Left	= &MouseMove(-3, 0)
+#key M1-C-Right	= &MouseMove(3, 0)
+#key M1-C-I 		= &MouseMove(0, -3)
+#key M1-C-K		= &MouseMove(0, 3)
+#key M1-C-J		= &MouseMove(-3, 0)
+#key M1-C-L		= &MouseMove(3, 0)
 
 # カーソル移動（速度デフォルト）
-#key M0-Up		= &MouseMove(0, -20)
-#key M0-Down 	= &MouseMove(0, 20)
-#key M0-Left 	= &MouseMove(-20, 0)
-#key M0-Right	= &MouseMove(20, 0)
-#key M0-I		= &MouseMove(0, -20)
-#key M0-K 		= &MouseMove(0, 20)
-#key M0-J 		= &MouseMove(-20, 0)
-#key M0-L		= &MouseMove(20, 0)
+key M1-Up		= &MouseMove(0, -20)
+key M1-Down 	= &MouseMove(0, 20)
+key M1-Left 	= &MouseMove(-20, 0)
+key M1-Right	= &MouseMove(20, 0)
+#key M1-I		= &MouseMove(0, -20)
+#key M1-K 		= &MouseMove(0, 20)
+#key M1-J 		= &MouseMove(-20, 0)
+#key M1-L		= &MouseMove(20, 0)
 
 # カーソル移動（高速）
-#key M0-M1-Up		= &MouseMove(0, -80)
-#key M0-M1-Down		= &MouseMove(0, 80)
-#key M0-M1-Left		= &MouseMove(-80, 0)
-#key M0-M1-Right 	= &MouseMove(80, 0)
+key M1-S-Up		= &MouseMove(0, -80)
+key M1-S-Down	= &MouseMove(0, 80)
+key M1-S-Left	= &MouseMove(-80, 0)
+key M1-S-Right 	= &MouseMove(80, 0)
 
-# ホイール
-#key M0-PageUp		= &MouseWheel(120)
-#key M0-PageDown 	= &MouseWheel(-120)
+# カーソル位置（固定位置）
+key M1-Home		= &MouseMoveTo(NW,0,0)
+key M1-End 		= &MouseMoveTo(SE,-32, -32) #マウスカーソルが多少見える位置へ移動する
 
-#クリック
+# ホイール(通常)
+key M1-PageUp		= &MouseWheel(120)
+key M1-PageDown 	= &MouseWheel(-120)
+# ホイール(高速)
+key M1-S-PageUp		= &MouseWheel(480)
+key M1-S-PageDown 	= &MouseWheel(-480)
+
+# -----------------------------------------------------------
+#	クリック
+# -----------------------------------------------------------
 #左
-#key M0-A			= &VK(LButton)
-#key D-R-M0-*A		= &Ignore
-#key M0-Space		= &VK(LButton)
-#key D-R-M0-*Space	= &Ignore
+key M1-Backspace		= &VK(LButton)
+key M1-R-Backspace		= &Ignore
 
 #右
-#key M0-D		= &VK(RButton)
-#key D-R-M0-*D	= &Ignore
+key M1-Delete	= &VK(RButton)
+key M1-R-Delete	= &Ignore
 
 #真ん中
-#key M0-S		= &VK(MButton)
-#key D-R-S 		= &Ignore
+key M1-K		= &VK(MButton)
+key M1-R-K		= &Ignore
 
-#
 #第4ボタン
-#key M0-Q 			= &VK(XButton1)
-#key D-R-Q			= &Ignore
+key M1-M 		= BrowserBack
+key M1-R-M		= &Ignore
 
 #第5ボタン
-#key M0-W 			= &VK(XButton2)
-#key D-R-W			= &Ignore
+key M1-Comma 	= BrowserForward 
+key M1-R-Comma	= &Ignore
+
+# HJKL
+key M1-H		= &VK(LButton)
+key M1-R-H		= &Ignore
+
+key M1-J		= &VK(RButton)
+key M1-R-J		= &Ignore
+
+#K 上記で定義している
+
+key M1-L 		= BrowserBack
+key M1-R-L		= &Ignore
+
+key M1-Semicolon 	= BrowserForward
+key M1-R-Semicolon	= &Ignore
 

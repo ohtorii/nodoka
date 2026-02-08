@@ -1,12 +1,15 @@
 ############################################################################
 #	ウインドウ
 ############################################################################
-#最大化トグル
-key Pause			= &WindowMaximize
-key D-R-Pause		= &Ignore
+#最大化トグル(Windowsキーで行う)
+#key Pause			= &WindowMaximize
+#key D-R-Pause		= &Ignore
+#key M0-Enter		= &WindowMaximize
+#key R-M0-Enter		= &Ignore
 
 #最小化
 #key C-Break 		= &WindowMinimize
+
 
 #閉じる(秀丸／コンソールは独自に上書きしている)
 #key C-ScrollLock	= &WindowClose
